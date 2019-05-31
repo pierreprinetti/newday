@@ -1,40 +1,51 @@
 # Bullet
 
-My Bullet-TODO assistant.
+A Bullet-journal assistant.
+
+Useful if you keep a TODO list in the form of an electronic bullet-journal.
 
 ## What
 
-This is what my TODO list looks like:
+Given this journal:
 
 ```
-* Task
-X Completed
-> Migrated
-< Scheduled
-- Cancelled
++--------------+
+| * Task       |
+| x Completed  |
+| > Migrated   |
+| - Cancelled  |
++--------------+
+
 
 ## 2019-05-27
-x Version-pin tooling for BE
-x Build BE from scratch
+x Version-pin deploy tooling
+x Build auth package
 * Replace Marco's deploy keys in the CI
 
 ## 2019-05-28
 x Replace Marco's deploy keys in the CI
-* Write new ticket: failed logins on CC
+* Write new ticket: failed logins on STG
 * Write new ticket: Create users for Kubectl
+* Investigate bug #123
 
 ## 2019-05-29
 x Write new ticket: Create users for Kubectl
-> Write new ticket: failed logins on CC
+> Write new ticket: failed logins on STG
 ```
 
-Bullet reads from stdin and writes to stdout.
+If the journal does not have an entry for today, Bullet will create it and report unfinished tasks.
 
-This first version adds today's date at the bottom, if it is not there already.
+```
+## 2019-05-31
+> Investigate bug #123
+> Write new ticket: failed logins on STG
+```
 
 ## How
 
-Once `bullet` is in your `$PATH`, type in vim:
+Bullet reads from stdin and writes to stdout.
+
+With `bullet` in your `$PATH`, type in vim:
 
 ```
 :%!bullet
