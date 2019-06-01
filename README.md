@@ -1,12 +1,10 @@
-# Bullet
+# Newday
 
-A Bullet-journal assistant.
-
-Useful if you keep a TODO list in the form of an electronic bullet-journal.
+A todo-list assistant.
 
 ## What
 
-Given this journal:
+Given this daily log:
 
 ```
 +--------------+
@@ -33,7 +31,7 @@ x Write new ticket: Create users for Kubectl
 > Write new ticket: failed logins on STG
 ```
 
-If the journal does not have an entry for today, Bullet will create it and report unfinished tasks.
+If the log does not have an entry for today, `newday` will create it and report unfinished tasks.
 
 ```
 ## 2019-05-31
@@ -43,10 +41,10 @@ If the journal does not have an entry for today, Bullet will create it and repor
 
 ## How
 
-Bullet reads from stdin and writes to stdout.
+Newday reads from stdin and writes to stdout.
 
-With `bullet` in your `$PATH`, type in vim:
+With `newday` in your `$PATH`, type in vim:
 
 ```
-:%!bullet
+:%!newday
 ```
