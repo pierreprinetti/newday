@@ -11,15 +11,16 @@ fn main() {
         let l = line.unwrap();
         println!("{}", l);
 
-        match l.chars().next() {
+        let mut chars = l.chars();
+        match chars.next() {
             Some('#') => {
-                last_date = l.chars().skip(3).take(10).collect();
+                last_date = chars.skip(2).take(10).collect();
             },
             Some('*') | Some('>') => {
-                items.insert(l.chars().skip(2).collect());
+                items.insert(chars.skip(1).collect());
             },
             Some('x') | Some('-') => {
-                let item: String = l.chars().skip(2).collect();
+                let item: String = chars.skip(1).collect();
                 items.remove(&item);
             },
             _ => (),
