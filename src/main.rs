@@ -28,9 +28,9 @@ fn main() {
     }
 
     let d = NaiveDate::parse_from_str(&last_date, "%Y-%m-%d").expect("Not a date");
-    let today = Local::today().naive_local();
-    if d != today {
-        println!("\n## {}", today.format("%Y-%m-%d").to_string());
+    let now = Local::now().naive_local();
+    if d != now.into() {
+        println!("\n## {}", now.format("%Y-%m-%d").to_string());
         for item in items {
             println!("> {}", item);
         }
